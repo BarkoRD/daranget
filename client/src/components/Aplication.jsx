@@ -1,11 +1,10 @@
-import React from 'react'
+import React from "react";
 
-const Aplication = ({ src, alt, description }) => (
-
+const Aplication = ({ src, description }) => (
   <div className="container__apps-element">
-    <img src={src} alt={alt} />
+    {src}
     <p>{description}</p>
   </div>
-)
+);
 
-export default Aplication
+export default Aplication;

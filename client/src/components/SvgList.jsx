@@ -3,8 +3,9 @@ const SvgList = ({ image }) => (
     <img
       src={`./companies/${image}.svg`}
       alt={`Imagen de el logo de ${image}}`}
+      //draggable="false"
     />
   </li>
-)
+);
 
-export default SvgList
+export default SvgList;

@@ -37,12 +37,23 @@ body {
       width: 138px;
       height: 80px;
       font-size: 22px;
-      & img {
+      transition: all 0.1s ease-in-out;
+      cursor: pointer;
+
+      & svg {
         height: 1.8em;
       }
 
-      &:hover p{
-        color: #62d5d6 ;
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:hover p {
+        color: #62d5d6;
+      }
+
+      &:hover svg path {
+        fill: #62d5d6;
       }
     }
   }
