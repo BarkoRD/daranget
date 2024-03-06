@@ -1,0 +1,49 @@
+body {
+  background: radial-gradient(125% 125% at 50% 10%, #000 55%, #e31b4d 100%);
+
+  #root {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 140px;
+  }
+}
+
+.container {
+  display: flex;
+  padding: 30px 10px 30px 30px;
+  justify-content: space-between;
+  align-items: center;
+
+  & .container__img-logo {
+    & img {
+      height: 50px;
+    }
+  }
+
+  & .container__apps-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    & .container__apps-element {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 138px;
+      height: 80px;
+      font-size: 22px;
+      & img {
+        height: 1.8em;
+      }
+
+      &:hover p{
+        color: #62d5d6 ;
+      }
+    }
+  }
+}
