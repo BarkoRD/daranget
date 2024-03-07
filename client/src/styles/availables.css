@@ -7,6 +7,8 @@
   .availables__title {
     font-size: 1.8rem;
     font-weight: 400;
+    transition: all 0.3s ease-in-out;
+    /* animation: float 6s ease-in-out infinite; */
   }
 
   .availables__images {
@@ -20,7 +22,24 @@
         width: 60px;
         height: 60px;
         object-fit: cover;
+        transition: all 0.3s ease-in-out;
+        border-radius: 50%; 
       }
     }
   }
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-10px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
 }

@@ -1,17 +1,39 @@
-import '../styles/App.css'
-import Availables from './Availables'
-import Header from './Header'
-import Input from './Input'
+import React, { useEffect, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
+import { loadFull } from "tsparticles";
+import particlesOptions from "./config/particles-config.json";
+import "../styles/App.css";
+import ParticlesBg from "./ParticlesBackground";
 
-function App () {
+import Availables from "./Availables";
+import Header from "./Header";
+import Input from "./Input";
+
+const App = () => {
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    if (init) {
+      return;
+    }
+
+    initParticlesEngine(async (engine) => {
+      await loadFull(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
   return (
     <>
-    <div className='app'>
+      {init && <Particles options={particlesOptions} />}
+      <ParticlesBg />
       <Header />
-    </div>
-    <Input />
-    <Availables />
+      <Input />
+      <Availables />
     </>
-  )
-}
-export default App
+  );
+};
+
+export default App;

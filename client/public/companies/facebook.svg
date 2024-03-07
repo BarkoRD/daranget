@@ -1,10 +1,10 @@
-<svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_13_19)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M64.0812 0C69.0037 0 73 3.99647 73 8.91883V64.0812C73 69.0035 69.0035 73 64.0812 73H48.9012V45.4945H58.3969L60.2036 33.7146H48.9012V26.07C48.9012 22.8473 50.4799 19.7059 55.5424 19.7059H60.6813V9.67692C60.6813 9.67692 56.0175 8.88105 51.5588 8.88105C42.2502 8.88105 36.1661 14.5227 36.1661 24.7363V33.7146H25.8188V45.4945H36.1661V73H8.91883C3.99647 73 0 69.0035 0 64.0812V8.91883C0 3.99647 3.99632 0 8.91883 0H64.0812Z" fill="#E31B4D"/>
-</g>
-<defs>
-<clipPath id="clip0_13_19">
-<rect width="73" height="73" fill="white"/>
-</clipPath>
-</defs>
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+  <g transform="translate(-28.16,-28.16) scale(1.22,1.22)">
+    <g fill="#e31b4d" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+      <g transform="scale(4,4)">
+        <path d="M32,6c-14.358,0 -26,11.642 -26,26c0,13.035 9.603,23.799 22.113,25.679v-18.789h-6.433v-6.834h6.433v-4.548c0,-7.529 3.668,-10.833 9.926,-10.833c2.996,0 4.583,0.223 5.332,0.323v5.965h-4.268c-2.656,0 -3.584,2.52 -3.584,5.358v3.735h7.785l-1.055,6.834h-6.73v18.843c12.69,-1.72 22.481,-12.57 22.481,-25.733c0,-14.358 -11.641,-26 -26,-26z">
+        </path>
+      </g>
+    </g>
+  </g>
 </svg>
