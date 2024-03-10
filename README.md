@@ -1,11 +1,7 @@
 # DaranGET
-
-ponerle el box shadow a los 5 iconos y a los elementos del nav
 hover de los navs
 
-terminar el responsive o al menos el diseño
-empezar el lado del servidor.
-la api sera lo primero
+daranget api
 
 ## v1.0 - Requerimientos
 
