@@ -1,9 +1,7 @@
-import React from "react";
-import Aplication from "./Aplication";
-import "../styles/header.css";
-import Pepper from "./Pepper";
+import React, { useState } from "react";
+import Aplicationpepper from "./Aplicationpepper";
 
-const Header = () => {
+const Pepper = () => {
   const apps = [
     {
       src: (
@@ -67,20 +65,56 @@ const Header = () => {
       description: "Extension",
     },
   ];
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="container">
-      <div className="container__img-logo">
-        <img src="./daranget-logo.png" alt="daranget logo" draggable="false" />
+    <>
+      <button
+        className="pepper-button" //className={`pepper-button ${!isMenuOpen ? "button-visible" : "button-invisible" }`}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        <svg viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M0 4c0-1.105.89-2 2.004-2h20.992C24.103 2 25 2.888 25 4c0 1.105-.89 2-2.004 2H2.004A1.997 1.997 0 0 1 0 4Zm0 8c0-1.105.89-2 2.004-2h20.992c1.107 0 2.004.888 2.004 2 0 1.105-.89 2-2.004 2H2.004A1.997 1.997 0 0 1 0 12Zm0 8c0-1.105.89-2 2.004-2h20.992c1.107 0 2.004.888 2.004 2 0 1.105-.89 2-2.004 2H2.004A1.997 1.997 0 0 1 0 20Z"
+            fill="#e31b4d"
+            fill-rule="evenodd"
+            class="fill-000000"
+          ></path>
+        </svg>
+      </button>
+      <div
+        className={`container__pepper-menu ${
+          isMenuOpen ? "pepper-open" : "pepper-closed"
+        }`}
+      >
+        <div className="pepper__menu-header">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <svg
+              viewBox="0 0 512 512"
+              xml:space="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              enable-background="new 0 0 512 512"
+            >
+              <path
+                d="M437.5 386.6 306.9 256l130.6-130.6c14.1-14.1 14.1-36.8 0-50.9-14.1-14.1-36.8-14.1-50.9 0L256 205.1 125.4 74.5c-14.1-14.1-36.8-14.1-50.9 0-14.1 14.1-14.1 36.8 0 50.9L205.1 256 74.5 386.6c-14.1 14.1-14.1 36.8 0 50.9 14.1 14.1 36.8 14.1 50.9 0L256 306.9l130.6 130.6c14.1 14.1 36.8 14.1 50.9 0 14-14.1 14-36.9 0-50.9z"
+                fill="#e31b4d"
+                class="fill-000000"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div className="peppe__menu_elements">
+          {apps.map((app, index) => (
+            <Aplicationpepper
+              key={index}
+              src={app.src}
+              description={app.description}
+            />
+          ))}
+        </div>
       </div>
-      <div className="container__apps-container">
-        {apps.map((app, e) => (
-          <Aplication key={e} src={app.src} description={app.description} />
-        ))}
-        <Pepper />
-      </div>
-    </header>
+    </>
   );
 };
 
-export default Header;
+export default Pepper;

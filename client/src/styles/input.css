@@ -1,6 +1,8 @@
 .form {
   display: flex;
   justify-content: center;
+  align-self: center;
+  padding-top: 2vh;
 
   .form__input {
     order: -1;
@@ -12,9 +14,9 @@
     border: none;
     outline: none;
     background-color: transparent;
-    border: 2px solid #e31b4d;
-    box-shadow: 1px 1px 10px #e31b4d;
-    color: #62d5d6;
+    border: 2px solid var(--primary-color);
+    box-shadow: 1px 1px 10px var(--primary-color);
+    color: var(--secondary-color);
     transition: all 0.3s;
 
     &::placeholder {
@@ -27,27 +29,80 @@
     padding: 20px;
     border: none;
     outline: none;
-    background-color: #e31b4d;
+    background-color: var(--primary-color);
     color: black;
     font-size: 1.5rem;
     border-start-end-radius: 10px;
     border-end-end-radius: 10px;
     cursor: pointer;
-    box-shadow: 1px 1px 10px #e31b4d;
+    box-shadow: 1px 1px 10px var(--primary-color);
     transition: all 0.3s;
 
     &:hover {
-      background-color: #62d5d6;
+      background-color: var(--secondary-color);
       box-shadow: 0 0 0 transparent;
 
       & + input {
-        color: #e31b4d;
+        color: var(--primary-color);
         box-shadow: 0 0 0 transparent;
-        border: 2px solid #62d5d6;
+        border: 2px solid var(--secondary-color);
 
         &::placeholder {
           color: #62d4d674;
           transition: all 0.3s;
+        }
+      }
+    }
+  }
+}
+
+/* DEVICE: TABLETS */
+@media (min-width: 401px) and (max-width: 850px) {
+  .form{
+    .form__input {
+      width: 75vw;
+      padding: 20px;
+      font-size: 1.6rem;
+    }
+    .form__button {
+      padding: 10px;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+/* DEVICE: MOBILE */
+@media (max-width: 400px) {
+  .form{
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    
+    .form__input {
+      width: 80%;
+      border-radius: 10px;
+      font-size: 1rem;
+      padding: 12px;
+    }
+    .form__button {
+      border-radius: 10px;
+      padding: calc(15vw/2 - 12px) 30px;
+      font-size: 1rem;
+
+      &:hover {
+        background-color: var(--secondary-color);
+        box-shadow: 0 0 0 transparent;
+
+        & + input {
+          color: var(--primary-color);
+          box-shadow: 0 0 0 transparent;
+          border: 2px solid var(--primary-color);
+
+          &::placeholder {
+            color: #e31b4da7;
+            transition: all 0.3s;
+          }
         }
       }
     }

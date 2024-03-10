@@ -1,0 +1,156 @@
+.container {
+  display: flex;
+  padding: 30px 30px 30px 30px;
+  justify-content: space-between;
+  align-items: center;
+
+  & .container__img-logo {
+    & img {
+      height: 50px;
+    }
+  }
+
+  & .container__apps-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    & .pepper-button {
+      display: none;
+    }
+
+    & .container__apps-element {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 138px;
+      height: 80px;
+      font-size: 22px;
+      transition: all 0.1s ease-in-out;
+      cursor: pointer;
+
+      & svg {
+        height: 1.8em;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:hover p {
+        color: #62d5d6;
+      }
+
+      &:hover svg path {
+        fill: #62d5d6;
+      }
+    }
+  }
+}
+
+.container__pepper-menu {
+  position: absolute;
+  top: -0px;
+  right: -2014px;
+  z-index: 10;
+  width: 100vw;
+  height: 101vh;
+  background-color: rgba(0, 0, 0, 0.903);
+  border-bottom: none;
+
+  transition: all 0.2s ease-in-out;
+
+  & .peppe__menu_elements {
+    width: 260px;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+
+    & .pepper__apps-element {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      font-size: 30px;
+      & svg {
+        height: 50px;
+      }
+    }
+  }
+  & .pepper__menu-header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    justify-content: flex-end;
+    padding-right: 32px;
+    padding-top: 52px;
+
+    button {
+      border: none;
+      background-color: transparent;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:hover svg path {
+        fill: var(--secondary-color);
+      }
+
+      & svg {
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .container .container__img-logo {
+    & img {
+      height: 8vw;
+    }
+  }
+
+  .container .container__apps-container {
+    & .container__apps-element {
+      display: none;
+    }
+
+    & .pepper-button {
+      display: block;
+      background-color: transparent;
+      border: none;
+
+      & svg {
+        height: 40px;
+      }
+
+      & svg path {
+        transition: all 0.1s ease-in-out;
+      }
+
+      &:hover svg path {
+        fill: var(--secondary-color);
+      }
+    }
+
+    & .button-invisible {
+      display: none;
+    }
+
+    & .pepper-open {
+      right: -2px;
+    }
+  }
+}
