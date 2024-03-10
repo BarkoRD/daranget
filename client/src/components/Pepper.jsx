@@ -65,13 +65,13 @@ const Pepper = () => {
       description: "Extension",
     },
   ];
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menuStatus, setMenuStatus] = useState('');
 
   return (
     <>
       <button
-        className="pepper-button" //className={`pepper-button ${!isMenuOpen ? "button-visible" : "button-invisible" }`}
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="pepper-button" //className={`pepper-button ${!menuStatus ? "button-visible" : "button-invisible" }`}
+        onClick={() => setMenuStatus('pepper-open')}
       >
         <svg viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -83,12 +83,10 @@ const Pepper = () => {
         </svg>
       </button>
       <div
-        className={`container__pepper-menu ${
-          isMenuOpen ? "pepper-open" : "pepper-closed"
-        }`}
+        className={`container__pepper-menu ${menuStatus}`}
       >
         <div className="pepper__menu-header">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button onClick={() => setMenuStatus('pepper-closed')}>
             <svg
               viewBox="0 0 512 512"
               xml:space="preserve"

@@ -52,16 +52,16 @@
 }
 
 .container__pepper-menu {
-  position: absolute;
-  top: -0px;
-  right: -2014px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0px;
+  right: 0px;
   z-index: 10;
-  width: 100vw;
-  height: 101vh;
+  width: 0;
+  height: 0;
   background-color: rgba(0, 0, 0, 0.903);
-  border-bottom: none;
-
-  transition: all 0.2s ease-in-out;
+  overflow: hidden;
 
   & .peppe__menu_elements {
     width: 260px;
@@ -150,7 +150,37 @@
     }
 
     & .pepper-open {
-      right: -2px;
+      animation: pepper-menu 0.3s ease-in-out;
+      width: 100vw;
+      height: 100vh;
     }
+
+    & .pepper-closed {
+      animation: pepper-menu-closed 0.3s ease-in-out;
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
+@keyframes pepper-menu {
+  from {
+    width: 0;
+    height: 0;
+  }
+  to {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@keyframes pepper-menu-closed {
+  from {
+    width: 100vw;
+    height: 100vh;
+  }
+  to {
+    width: 0;
+    height: 0;
   }
 }

@@ -2,27 +2,16 @@ import "../styles/input.css";
 import axios from "axios";
 
 const Input = () => {
-  const detectUrlDomain = (url) => {
-    if (url.includes("facebook.com") || url.includes('instagram.com')) {
-      return "fc";
-    // } else if (url.includes("instagram.com")) {
-    //   return "ig";
-    } else if (url.includes("youtube.com") || url.includes("youtu.be")) {
-      return "yt";
-    } else if (url.includes("twitter.com") || url.includes("x.com")) {
-      return "x";
-    } else if (url.includes("tiktok.com")) {
-      return "tt";
-    } else {
-      throw new Error("URL no soportada");
-    }
-  };
 
   const startDownload = async (data) => {
-    const domain = detectUrlDomain(data.url);
-    const endpoint = `http://localhost:3000/download/${domain}`;
+    const endpoint = `http://localhost:3000/download`;
+
+    console.log(data);
     const res = await axios.post(endpoint, data);
+    console.log(res);
+
     const downloadUrl = res.data.url;
+
     const anchor = document.createElement("a");
     anchor.href = downloadUrl;
     anchor.target = "_blank";
