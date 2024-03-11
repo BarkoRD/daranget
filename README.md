@@ -1,7 +1,6 @@
 # DaranGET
 
-agregar loading
-la api sera lo primero
+solo falta terminar el bot de discord y el api de videos de botella
 
 ## v1.0 - Requerimientos
 
