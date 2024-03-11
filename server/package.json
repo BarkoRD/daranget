@@ -2,7 +2,6 @@
   "name": "server",
   "version": "1.0.0",
   "description": "daranget server",
-  "type": "module",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.7",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "facebook-video-downloader": "^1.0.1",

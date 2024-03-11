@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "DaranGET",
+  "version": "1.0",
+  "description": "DaranGET Extension Version",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "128": "logo.png"
+    }
+  },
+  "permissions": ["storage"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

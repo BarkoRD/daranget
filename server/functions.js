@@ -1,11 +1,11 @@
-import ytdl from "ytdl-core";
-import nmd from "nayan-media-downloader";
+const ytdl = require("ytdl-core");
+const nmd = require("nayan-media-downloader");
 
-export const getVideoLink = async (url) => {
+const getVideoLink = async (url) => {
   if (url.includes("facebook.com") || url.includes("instagram.com")) {
     return await getFacebookVideoUrl(url);
   } else if (url.includes("youtube.com") || url.includes("youtu.be")) {
-    console.log(getYoutubeVideoUrl(url));
+    console.log(await getYoutubeVideoUrl(url));
     return await getYoutubeVideoUrl(url);
   } else if (url.includes("twitter.com") || url.includes("x.com")) {
     return await getTwitterVideoUrl(url);
@@ -16,7 +16,7 @@ export const getVideoLink = async (url) => {
   }
 };
 
-export const getYoutubeVideoUrl = async (url) => {
+const getYoutubeVideoUrl = async (url) => {
   try {
     const info = await ytdl.getInfo(url);
     const formats = ytdl.filterFormats(info.formats, "audioandvideo");
@@ -28,7 +28,7 @@ export const getYoutubeVideoUrl = async (url) => {
   }
 };
 
-export const getFacebookVideoUrl = async (url) => {
+const getFacebookVideoUrl = async (url) => {
   try {
     const { ndown } = nmd;
     const response = await ndown(url);
@@ -40,7 +40,7 @@ export const getFacebookVideoUrl = async (url) => {
   }
 };
 
-export const getTikTokVideoUrl = async (url) => {
+const getTikTokVideoUrl = async (url) => {
   try {
     const { tikdown } = nmd;
     const response = await tikdown(url);
@@ -52,7 +52,7 @@ export const getTikTokVideoUrl = async (url) => {
   }
 };
 
-export const getTwitterVideoUrl = async (url) => {
+const getTwitterVideoUrl = async (url) => {
   try {
     const { twitterdown } = nmd;
     const response = await twitterdown(url);
@@ -62,4 +62,12 @@ export const getTwitterVideoUrl = async (url) => {
     console.error("Error al obtener información del video de Twitter:", error);
     throw new Error("Ocurrió un error al procesar la solicitud de Twitter.");
   }
+};
+
+module.exports = {
+  getVideoLink,
+  getYoutubeVideoUrl,
+  getFacebookVideoUrl,
+  getTikTokVideoUrl,
+  getTwitterVideoUrl,
 };

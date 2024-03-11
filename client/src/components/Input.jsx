@@ -2,14 +2,10 @@ import "../styles/input.css";
 import axios from "axios";
 
 const Input = () => {
-
   const startDownload = async (data) => {
     const endpoint = `http://localhost:3000/download`;
 
-    console.log(data);
     const res = await axios.post(endpoint, data);
-    console.log(res);
-
     const downloadUrl = res.data.url;
 
     const anchor = document.createElement("a");
