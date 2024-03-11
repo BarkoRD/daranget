@@ -3,7 +3,7 @@ import axios from "axios";
 
 const Input = () => {
   const startDownload = async (data) => {
-    const endpoint = `http://localhost:3000/download`;
+    const endpoint = `http://api.daranhub.com/download`;
 
     const res = await axios.post(endpoint, data);
     const downloadUrl = res.data.url;

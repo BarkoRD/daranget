@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
 import { loadFull } from "tsparticles";
 import particlesOptions from "./config/particles-config.json";
 import "../styles/App.css";

@@ -10,7 +10,7 @@ export default defineConfig({
   })],
   // Configuraciones adicionales de Vite aquí
   // Por ejemplo, para configurar el directorio base de tu proyecto:
-  base: './',
+  base: '/',
   // Para definir variables de entorno y otros ajustes específicos:
   server: {
     host: true,
