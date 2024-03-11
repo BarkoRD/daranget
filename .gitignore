@@ -1,6 +1,6 @@
 node_modules
 old.js
 patrones.md
-config.json
-daran-bot
+daran-bot/config.json
+daran-bot/.env
 extension editable

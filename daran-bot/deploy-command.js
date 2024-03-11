@@ -1,7 +1,11 @@
 const { REST, Routes } = require('discord.js')
-const { clientID, guildID, token } = require('./config.json')
 const fs = require('node:fs')
 const path = require('node:path')
+const dotenv = require('dotenv');
+dotenv.config();
+const clientID = process.env.clientID
+const guildID = process.env.guildID
+const token = process.env.token
 
 const commands = []
 const foldersPath = path.join(__dirname, 'commands')
@@ -21,7 +25,7 @@ for (const folder of commandFolders) {
 	}
 }
 
-const rest = new REST().setToken(token)
+const rest = new REST({ version: '9' }).setToken(token);
 
 (async () => {
 	try {

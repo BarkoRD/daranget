@@ -11,7 +11,7 @@ module.exports = {
 				.setRequired(true)),
 	async execute(interaction) {
 		const url = interaction.options.getString('url')
-    const endpoint = `http://localhost:3000/download`
+    const endpoint = `http://api.daranhub.com/download`
     const { data } = await axios.post(endpoint, { url })
 		await interaction.reply({ content: data.url, ephemeral: true })
 	}
