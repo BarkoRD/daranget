@@ -33,6 +33,7 @@ const Header = () => {
         </svg>
       ),
       description: "GitHub",
+      link: "https://github.com/BarkoRD/daranget",
     },
     {
       src: (
@@ -50,6 +51,7 @@ const Header = () => {
         </svg>
       ),
       description: "Discord Bot",
+      link: "https://discord.com/oauth2/authorize?client_id=1216564307333218405&permissions=274877975552&scope=applications.commands+bot",
     },
     {
       src: (
@@ -65,6 +67,7 @@ const Header = () => {
         </svg>
       ),
       description: "Extension",
+      link: "https://drive.google.com/uc?id=186WEFcavZiOSzu6l44iZZFy92qAPR8KB&export=download",
     },
   ];
 
@@ -75,7 +78,12 @@ const Header = () => {
       </div>
       <div className="container__apps-container">
         {apps.map((app, e) => (
-          <Aplication key={e} src={app.src} description={app.description} />
+          <Aplication
+            key={e}
+            src={app.src}
+            description={app.description}
+            link={app.link}
+          />
         ))}
         <Pepper />
       </div>
