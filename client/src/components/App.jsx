@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadFull } from "tsparticles";
-import particlesOptions from "./config/particles-config.json";
-import "../styles/App.css";
-import ParticlesBg from "./ParticlesBackground";
+import React, { useEffect, useState } from 'react'
+import Particles, { initParticlesEngine } from '@tsparticles/react'
+import { loadFull } from 'tsparticles'
+import particlesOptions from './config/particles-config.json'
+import '../styles/App.css'
+import ParticlesBg from './ParticlesBackground'
 
-import Availables from "./Availables";
-import Header from "./Header";
-import Input from "./Input";
+import Availables from './Availables'
+import Header from './Header'
+import Input from './Input'
 
 const App = () => {
-  const [init, setInit] = useState(false);
+  const [init, setInit] = useState(false)
 
   useEffect(() => {
     if (init) {
-      return;
+      return
     }
 
     initParticlesEngine(async (engine) => {
-      await loadFull(engine);
+      await loadFull(engine)
     }).then(() => {
-      setInit(true);
-    });
-  }, []);
+      setInit(true)
+    })
+  }, [])
 
   return (
     <>
@@ -32,7 +32,7 @@ const App = () => {
       <Input />
       <Availables />
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App

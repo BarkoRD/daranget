@@ -11,13 +11,15 @@ const Availables = () => {
 
   return (
     <section className='availables'>
-      <h2 
-      className='availables__title'
-      style={{
-        animation: 'float 5s ease-in-out infinite',
-        animationDelay: `${Math.random() * 2.5}s`,
-      }}
-      >Can get videos from</h2>
+      <h2
+        className='availables__title'
+        style={{
+          animation: 'float 5s ease-in-out infinite',
+          animationDelay: `${Math.random() * 2.5}s`,
+        }}
+      >
+        Can get videos from
+      </h2>
       <ul className='availables__images'>
         {redes.map(({ id, red }) => (
           <SvgList key={id} image={red} />
