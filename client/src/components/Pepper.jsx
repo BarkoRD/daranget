@@ -31,6 +31,7 @@ const Pepper = () => {
         </svg>
       ),
       description: "GitHub",
+      link: "https://github.com/BarkoRD/daranget",
     },
     {
       src: (
@@ -48,6 +49,7 @@ const Pepper = () => {
         </svg>
       ),
       description: "Discord Bot",
+      link: "https://discord.com/oauth2/authorize?client_id=1216564307333218405&permissions=274877975552&scope=applications.commands+bot",
     },
     {
       src: (
@@ -63,6 +65,7 @@ const Pepper = () => {
         </svg>
       ),
       description: "Extension",
+      link: "https://drive.google.com/uc?id=186WEFcavZiOSzu6l44iZZFy92qAPR8KB&export=download",
     },
   ];
   const [menuStatus, setMenuStatus] = useState('');
@@ -70,7 +73,7 @@ const Pepper = () => {
   return (
     <>
       <button
-        className="pepper-button" //className={`pepper-button ${!menuStatus ? "button-visible" : "button-invisible" }`}
+        className="pepper-button" 
         onClick={() => setMenuStatus('pepper-open')}
       >
         <svg viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
@@ -107,6 +110,7 @@ const Pepper = () => {
               key={index}
               src={app.src}
               description={app.description}
+              link={app.link}
             />
           ))}
         </div>
