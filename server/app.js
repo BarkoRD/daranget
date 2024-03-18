@@ -1,32 +1,32 @@
-const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
+const express = require('express')
+const cors = require('cors')
+const bodyParser = require('body-parser')
+const { getVideoLink, downloadVideoAsBuffer } = require('./functions.js')
 
-const { getVideoLink } = require("./functions.js");
+const app = express()
 
-const app = express();
-app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-// app.use(cors("http://localhost:5000"));
-// app.use(cors({
-//   origin: "http://localhost:5174"
-// }))
-app.use(cors());
-app.get("/", (req, res) => {
-  res.json("guara u duin here brou ?");
-});
+app.use(express.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+app.use(cors())
 
-app.post("/download", async (req, res) => {
+app.get('/getvideo', async (req, res) => {
+  const videoUrl = req.query.url
   try {
-    const videoLink = await getVideoLink(req.body.url);
-    res.json(videoLink);
+    const { url } = await getVideoLink(videoUrl)
+    const buffer = await downloadVideoAsBuffer(url)
+    res.writeHead(200, {
+      'Content-Type': 'video/mp4',
+      'Content-Disposition': 'attachment; filename="video.mp4"',
+      'Content-Length': buffer.length,
+    })
+    res.end(buffer)
   } catch (error) {
-    res.json(error);
-    console.error(error);
+    console.log('Error reading the file:', error)
+    res.sendStatus(500)
   }
-});
+})
 
 app.listen(3000, () => {
-  console.log("Click Here brou http://localhost:3000");
-});
+  console.log(`Server running at http://localhost:${3000}`)
+})
