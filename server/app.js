@@ -15,12 +15,12 @@ app.get('/getvideo', async (req, res) => {
   try {
     const { url } = await getVideoLink(videoUrl)
     const buffer = await downloadVideoAsBuffer(url)
+    const video = { buffer: buffer.toString('base64'), url }
     res.writeHead(200, {
-      'Content-Type': 'video/mp4',
-      'Content-Disposition': 'attachment; filename="video.mp4"',
-      'Content-Length': buffer.length,
+      'Content-Type': 'application/json',
+      'Content-Disposition': 'attachment; filename="video.json"',
     })
-    res.end(buffer)
+    res.end(JSON.stringify(video))
   } catch (error) {
     console.log('Error reading the file:', error)
     res.sendStatus(500)

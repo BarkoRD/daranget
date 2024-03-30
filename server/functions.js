@@ -17,11 +17,14 @@ const getVideoLink = async (url) => {
   }
 }
 const getYoutubeVideoUrl = async (url) => {
-  console.log(url)
-  const { ytdown } = nmd
-  const response = await ytdown(url)
-  const videoUrl = response.data.video
-  return { url: videoUrl }
+  try{
+    const { ytdown } = nmd
+    const response = await ytdown(url)
+    const videoUrl = response.data.video
+    return { url: videoUrl }
+  } catch (error) {
+    console.log('Error al obtener información del video de YouTube:', error)
+  }
 }
 
 const getFacebookVideoUrl = async (url) => {
