@@ -4,9 +4,9 @@ const nmd = require('nayan-media-downloader')
 const getVideoLink = async (url) => {
   if (url.includes('facebook.com') || url.includes('instagram.com')) {
     return await getFacebookVideoUrl(url)
-  } else if (url.includes('youtube.com')){
+  } else if (url.includes('youtube.com')) {
     return await getYoutubeVideoUrl(url.replace('www.youtube.com', 'youtu.be'))
-  } else if(url.includes('youtu.be')) {
+  } else if (url.includes('youtu.be')) {
     return await getYoutubeVideoUrl(url)
   } else if (url.includes('twitter.com') || url.includes('x.com')) {
     return await getTwitterVideoUrl(url)
@@ -17,7 +17,7 @@ const getVideoLink = async (url) => {
   }
 }
 const getYoutubeVideoUrl = async (url) => {
-  try{
+  try {
     const { ytdown } = nmd
     const response = await ytdown(url)
     const videoUrl = response.data.video

@@ -8,8 +8,11 @@ const Input = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const formData = new FormData(e.target)
+    {
+      
+    }
     const inputData = Object.fromEntries(formData)
-    const endpoint = `http://localhost:3000/getvideo`
+    const endpoint = `http://localhost:3000/download`
     try {
       setLoader(true)  
       const { data } = await axios.get(endpoint, {
@@ -28,12 +31,13 @@ const Input = () => {
     } finally {
       setLoader(false)
       e.target.reset()
-      e.url.focus()
+      // e.url.focus()
     }
   }
   return (
     <form onSubmit={handleSubmit} className='form'>
-      <button className='form__button'>GET</button>
+  
+      <button className={`form__button${loader ? ' active': ''}`}>GET</button>
       {loader ? <Loader />: 
       <input
         className='form__input'

@@ -43,7 +43,7 @@ almacene el video en la web y luego decida si descargarlo o no
 
 ## v2.0 - Requerimientos
 
-- el loading simplemente sera la barra del input llenandose de rojo de izquierda a derecha
+- el loading simplemente sera la barra del input llenandose de azul de izquierda a derecha
 - Video converter a .mp3 en la web y en la extensión
 - Video converter en discord
 
