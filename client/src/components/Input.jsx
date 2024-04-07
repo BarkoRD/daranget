@@ -1,53 +1,39 @@
 import '../styles/input.css'
-import axios from 'axios'
 import Loader from './Loader'
+import ButtonBlock from './Buttonblock'
 import { useState } from 'react'
+import { downloadFile } from './functions'
 
 const Input = () => {
-  const [loader, setLoader] = useState(false)
+  const [loader, setLoader] = useState(false);
+  const [selectedFormat, setSelectedFormat] = useState('');
+  const [lowSpeed, setLowSpeed] = useState(false)
+
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    const formData = new FormData(e.target)
-    {
-      
-    }
-    const inputData = Object.fromEntries(formData)
-    const endpoint = `http://localhost:3000/download`
-    try {
-      setLoader(true)  
-      const { data } = await axios.get(endpoint, {
-        params: inputData,
-        responseType: 'arraybuffer',
-      })
-      const videoBlob = new Blob([data], { type: 'video/mp4' })
-      const url = window.URL.createObjectURL(videoBlob)
-      const a = document.createElement('a')
-      a.href = url
-      a.download = 'video.mp4'
-      a.click()
-      window.URL.revokeObjectURL(url)
-    } catch (error) {
-      console.error(error)
-    } finally {
-      setLoader(false)
-      e.target.reset()
-      // e.url.focus()
-    }
-  }
+    e.preventDefault();
+    await downloadFile(selectedFormat, { setLoader, setLowSpeed});
+    e.target.reset();
+  };
+
+  const handleFormatSelect = (format) => {
+    setSelectedFormat(format);
+  };
+
   return (
     <form onSubmit={handleSubmit} className='form'>
-  
-      <button className={`form__button${loader ? ' active': ''}`}>GET</button>
-      {loader ? <Loader />: 
-      <input
-        className='form__input'
-        autoComplete='off'
-        name='url'
-        type='text'
-        placeholder='https://www.example.com/watch/p/=687AS98F4A'
-      />}
+      <ButtonBlock onSelect={handleFormatSelect} />
+      {loader ? <Loader lowSpeed={lowSpeed}/> :
+        <input
+          className='form__input'
+          autoComplete='off'
+          name='url'
+          type='text'
+          placeholder='https://www.example.com/watch/p/=687AS98F4A'
+        />}
+      <input type="hidden" name="format" value={selectedFormat} />
     </form>
-  )
-}
+  );
+};
+
 
 export default Input

@@ -18,19 +18,18 @@ module.exports = {
   async execute(interaction) {
     await interaction.deferReply({ ephemeral: true })
     const url = interaction.options.getString('url')
-    const endpoint = 'http://localhost:3000/getvideo'
+    const endpoint = 'http://localhost:3000/download'
     try {
-      const { data } = await axios.get(endpoint, {
+      const { data, headers } = await axios.get(endpoint, {
         params: { url },
-        responseType: 'json',
-        timeout: 30000
+        responseType: 'arraybuffer',
+        timeout: 30000,
       })
-      const videoBuffer = Buffer.from(data.buffer, 'base64')
+      const videoBuffer = Buffer.from(data, 'base64')
       const maxSize = 8 * 1024 * 1024
-
       if (videoBuffer.length > maxSize) {
         await interaction.editReply({
-          content: `El video es demasiado grande para enviar directamente. Puedes descargarlo desde [aquí](${data.url}).`
+          content: `El video es demasiado grande para enviar directamente. Puedes descargarlo desde [aquí](${headers['link']}).`,
         })
       } else {
         const tempFilePath = path.join(__dirname, 'temp.mp4')
@@ -39,10 +38,9 @@ module.exports = {
         fs.unlinkSync(tempFilePath)
       }
     } catch (error) {
-      console.log('Error al descargar el video:', error)
       await interaction.editReply({
-        content: 'Ocurrió un error al descargar el video'
+        content: 'Ocurrió un error al descargar el video',
       })
     }
-  }
+  },
 }

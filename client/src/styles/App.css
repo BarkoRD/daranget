@@ -1,7 +1,7 @@
 :root {
   --primary-color: #e31b4d;
-  --primary-color-dark: #e31b4d23;
   --secondary-color: #62d5d6;
+  --primary-color-dark: #e31b4d24;
 }
 
 body {
@@ -10,9 +10,8 @@ body {
   #root {
     min-height: 100vh;
     min-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
   }
 }
 

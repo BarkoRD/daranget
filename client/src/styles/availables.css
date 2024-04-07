@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   row-gap: 4rem;
-  padding-bottom: 30vh;
+  margin-bottom: 15vh;
 
   .availables__title {
     font-size: 1.8rem;
@@ -35,7 +35,6 @@
 @media (min-width: 401px) and (max-width: 850px) {
   .availables {
     row-gap: 4rem;
-    padding-bottom: 20vh;
     .availables__title {
       font-size: 1.6rem;
     }
@@ -55,17 +54,16 @@
 /* DEVICE: MOBILE */
 @media (max-width: 400px) {
   .availables {
-    row-gap: 4rem;
-    padding-bottom: 20vh;
+    row-gap: 2rem;
+    margin-bottom: 10vh;
 
     .availables__title {
       font-size: 1.4rem;
     }
 
     .availables__images {
-      width: 80%;
-      gap: 8vw 10vw;
-      padding-inline: 5vw;
+      width: 80vw;
+      gap: 2rem 10vw;
 
       li img {
         width: 15vw;

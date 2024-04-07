@@ -1,6 +1,7 @@
 <!-- YT video y shorts -->
 
-https://www.youtube.com/watch?v=y_vO_m7-XNg&t=2s
+https://www.youtube.com/watch?v=y_vO_m7-XNg&t=2s una hora y pico
+https://www.youtube.com/watch?v=dU0WDJsNhC0
 https://www.youtube.com/shorts/UPEa7gCYSKA
 
 <!-- FC reels -->
@@ -39,21 +40,17 @@ https://www.tiktok.com/@faridieck/video/7339746263153396998
 
 ## v1.5 - Requerimientos
 
-almacene el video en la web y luego decida si descargarlo o no
+que se decalgue diretamente
 
 ## v2.0 - Requerimientos
 
 - el loading simplemente sera la barra del input llenandose de azul de izquierda a derecha
-- Video converter a .mp3 en la web y en la extensión
-- Video converter en discord
+- mp3 converter
 
 ## v3.0 - Requerimientos
 
-- Botella
-- video autodescargable
-
-## v4.0 - Requerimientos
-
 - ver como queda completar el input y dividir el boton ala derecha de manera flotante
 - mejorar la extension volverla reactiva en la pagina en la que estas
-
+- hacer mp3 en la extension
+- hacer mp3 en el bot de discord
+- botella

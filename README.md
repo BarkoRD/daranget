@@ -44,26 +44,26 @@ Our Discord bot introduces a novel way to access video downloads, providing conv
 
 ---
 
-## DaranGET 1.5 - Release Notes
+## DaranGET 1.9 - Release Notes
 
-We're excited to announce the release of DaranGET 1.5, which brings significant enhancements to our services, focusing on improving performance, user experience, and integration capabilities. Here's what's new:
+### Introduction
 
-### API Enhancements
+DaranGET 1.9 introduces a new MP3 download feature for YouTube, alongside frontend and API enhancements to improve the overall user experience.
 
-We've revamped our API to change its functionality. Instead of sending a video file directly, the API now sends a buffer which the frontend handles directly, allowing for a more efficient download process for the user. This change is aimed at developers seeking more control and efficiency in video downloads.
+### Features
 
-### Discord Bot Update
+- **YouTube to MP3:** Download YouTube videos as MP3 files directly from our platform. This initial release supports YouTube, with plans to extend functionality to other networks in the future.
+- **Frontend Enhancements:** A newly implemented loading system on the frontend provides real-time feedback during the video conversion process.
+- **API Updates:** Modifications to the API to support the MP3 download feature, ensuring a smooth and efficient user experience.
 
-The Discord bot has been updated to work seamlessly with the new API. This integration enhances the user experience by providing a smoother and more reliable video downloading process directly through Discord commands.
+### Note
 
-### Website Improvements
+The Discord bot and Chrome extension remain unchanged in this release. Future updates will consider enhancements to these components.
 
-Our website has received significant updates to work with the new API functionality. We've added a loading effect to the video download process, allowing users to visually track the progress of their video acquisition. This enhancement is part of our commitment to providing a user-friendly and engaging experience on our platform.
+### Closing
 
-### Chrome Extension
-
-The Chrome extension remains unchanged in this version, continuing to offer one-click downloads for an effortless video downloading experience.
+Your feedback is invaluable to us as we continue to develop and improve DaranGET. Explore the new features in 1.9 and share your thoughts!
 
 ---
 
-> **Your feedback drives our evolution! We're dedicated to continuous improvement and value your insights as we aim to further enhance DaranGET. Explore the new enhancements in DaranGET 1.5 and enjoy an even more seamless video downloading experience.**
+> **We're Just Getting Started!** Your feedback is the cornerstone of our development. As we celebrate the launch of DaranGET 1.9, we're already looking ahead to further innovations and improvements. We invite you to explore the new features and share your thoughts and suggestions with us. Your input helps shape the future of DaranGET, and together, we'll continue to make video downloading an effortless experience.
